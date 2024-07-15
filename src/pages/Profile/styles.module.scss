@@ -22,6 +22,12 @@
             border: 3px solid $background-color3;
         }
     }
+    label{
+        cursor: pointer;
+    }
+    input[type="file"]{
+        display: none;
+    }
     li{
         margin-bottom: 5px;
         padding: 10px;

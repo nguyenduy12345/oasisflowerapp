@@ -57,8 +57,9 @@ const Profile = () => {
             </li>
             <li>{i18n.language == 'vi' ? "Thông tin của bạn" : "Your Info"}</li>
             <li onClick={() => setChangePassword(!changePassword)}>{i18n.language == 'vi' ? "Thay đổi mật khẩu" : "Change Password"}</li>
-            <li>{i18n.language == 'vi' ? "Thay ảnh đại diện" :"Change Avatar" }
-              <input type="file" onChange={changeAvatar}/>
+            <li>
+              <label htmlFor="file_avt"> {i18n.language == 'vi' ? "Thay ảnh đại diện" :"Change Avatar" }</label>
+              <input id="file_avt" type="file" onChange={changeAvatar} />
             </li>
           </ul>
           <ul className={`${styles["profile__infomation"]} col-xs-12 col-sm-12`}>
