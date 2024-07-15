@@ -7,7 +7,6 @@ const DarkMode = () => {
   const { isDark, setIsDark } = useContext(Theme)
   const changeDarkMode = () =>{
     setIsDark(!isDark)
-    console.log(isDark)
     isDark ? localStorage.setItem("DARK_MODE", JSON.stringify(false)) : localStorage.setItem("DARK_MODE", JSON.stringify(true)) 
   }
   return (

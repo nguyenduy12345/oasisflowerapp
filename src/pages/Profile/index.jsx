@@ -14,7 +14,7 @@ const Profile = () => {
   const [crrPassword, setCrrPassword] = useState('')
   const [newPassword, setNewPassword] = useState('')
   const [message, setMessage] = useState('')
-  // const [changeAvt, setChangeAvt] = useState()
+  const [changeAvt, setChangeAvt] = useState()
   const getAccountRegister = localStorage.getItem("USER_REGISTER") ? JSON.parse(localStorage.getItem("USER_REGISTER")) : []
   const changeCrrPass = (e) =>{
     setCrrPassword(e.target.value)
@@ -40,26 +40,26 @@ const Profile = () => {
     }
   }, [newPassword])
   // console.log(getLogin.src)
-  // const changeAvatar = useCallback((e) =>{
-  //   let file = e.target.files[0]
-  //   let result = URL.createObjectURL(file)
-  //   setChangeAvt(result)
-  //   const index = getAccountRegister.findIndex(acc => (acc.username == getLogin.username))
-  //   localStorage.setItem("USER_REGISTER", JSON.stringify([...getAccountRegister, getAccountRegister[index].src = result]))
-  // }, [changeAvt])
+  const changeAvatar = useCallback((e) =>{
+    let file = e.target.files[0]
+    let result = URL.createObjectURL(file)
+    setChangeAvt(result)
+    // const index = getAccountRegister.findIndex(acc => (acc.username == getLogin.username))
+    // localStorage.setItem("USER_REGISTER", JSON.stringify([...getAccountRegister, getAccountRegister[index].src = result]))
+  }, [changeAvt])
   return (
     <div className={`${styles["profile"]} row`} onClick ={(e) => {}}>
       {getLogin && (
         <>
           <ul className={`${styles["profile__action"]} col-xs-12 col-sm-12`}>
             <li className={styles["profile__avatar"]}>
-              <img src="/img/profile/default-user-icon-13.jpg" />
+              <img src={changeAvt ? changeAvt : "/img/profile/default-user-icon-13.jpg"} />
             </li>
             <li>{i18n.language == 'vi' ? "Thông tin của bạn" : "Your Info"}</li>
             <li onClick={() => setChangePassword(!changePassword)}>{i18n.language == 'vi' ? "Thay đổi mật khẩu" : "Change Password"}</li>
-            {/* <li>Change Avatar
+            <li>{i18n.language == 'vi' ? "Thay ảnh đại diện" :"Change Avatar" }
               <input type="file" onChange={changeAvatar}/>
-            </li> */}
+            </li>
           </ul>
           <ul className={`${styles["profile__infomation"]} col-xs-12 col-sm-12`}>
             <li>
