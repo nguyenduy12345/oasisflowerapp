@@ -28,7 +28,7 @@ const Occasions = () => {
           ))}
         </ul>
         <div className={`${styles["service"]} row`}>
-            <img loading='lazy' className="col-md-6" src="/src/assets/images/img/occasions/tiffany_b2b_block.jpg" alt="" />
+            <img loading='lazy' className="col-md-6" src="/img/occasions/tiffany_b2b_block.jpg" alt="" />
             <div className={`${styles["service__des"]} col-md-6`}>
                 <h1>{t('service.title')}</h1>
                 <p>{t('service.des')}</p>

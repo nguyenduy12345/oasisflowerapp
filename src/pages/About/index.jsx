@@ -27,11 +27,11 @@ const About = () => {
       </p>
       <ul className='row'>
         <li className='col-xs-12 col-sm-12 col-md-7'>
-          <img src="/src/pages/about/img1.jfif" />
+          <img src="/img/aboutpage/img1.jfif" />
           <h3>Stores</h3>
         </li>
         <li className='col-xs-12 col-sm-12 col-md-5'>
-          <img src="/src/pages/about/img2.jfif" />
+          <img src="/img/aboutpage/img2.jfif" />
           <h3>Address</h3>
         </li>
       </ul>
