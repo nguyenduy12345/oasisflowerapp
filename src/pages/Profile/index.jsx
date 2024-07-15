@@ -53,7 +53,7 @@ const Profile = () => {
         <>
           <ul className={`${styles["profile__action"]} col-xs-12 col-sm-12`}>
             <li className={styles["profile__avatar"]}>
-              <img src="/src/pages/Profile/default-user-icon-13.jpg" />
+              <img src="/img/profile/default-user-icon-13.jpg" />
             </li>
             <li>{i18n.language == 'vi' ? "Thông tin của bạn" : "Your Info"}</li>
             <li onClick={() => setChangePassword(!changePassword)}>{i18n.language == 'vi' ? "Thay đổi mật khẩu" : "Change Password"}</li>

@@ -23,7 +23,7 @@ const CartItem = ({product, handleAddQuantity, handleMinusQuantity, handleRemove
       <li>
         <i
           onClick={handleRemoveItemCart}
-          className="fa-solid fa-xmark"
+          className="fa-solid fa-trash"
         ></i>
       </li>
     </ul>

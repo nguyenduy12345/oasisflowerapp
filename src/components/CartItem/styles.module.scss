@@ -28,6 +28,9 @@
             width: 100%;
         } 
     }
+    i{
+        color: $color-text;
+    }
     .icon{
         font-size: $font-size;
         border: none;
@@ -38,7 +41,7 @@
         padding: 0 9px;
     }
     &:hover{
-        background-color: $background-color;
+        // background-color: $background-color;
     }
     &>li:nth-child(1){
         padding: 0 5px;
