@@ -104,8 +104,8 @@ const ProductView = ({dataItem, setDataItem }) => {
                 </div>
                 <ul className={styles["product__image--small"]}>                   
                     <li><img onClick={(e) => setGetImage(e.target.src)} loading='lazy' src={dataItem.src}/></li>
-                    <li><img onClick={(e) => setGetImage(e.target.src)} loading='lazy' src="/src/assets/images/img/flower/tulips/mixed_tulip.JPG" /></li>  
-                    <li><img onClick={(e) => setGetImage(e.target.src)} loading='lazy' src="/src/assets/images/img/flower/roses/spring_mixed_rose.jpg" /></li>             
+                    <li><img onClick={(e) => setGetImage(e.target.src)} loading='lazy' src="/img/flower/tulips/mixed_tulip.JPG" /></li>  
+                    <li><img onClick={(e) => setGetImage(e.target.src)} loading='lazy' src="/img/flower/roses/spring_mixed_rose.jpg" /></li>             
                 </ul>
             </div>
             <div className={`${styles["attribute"]} col-sm-12 col-lg-7`}>
@@ -129,13 +129,13 @@ const ProductView = ({dataItem, setDataItem }) => {
                     <span className={styles["attribute__title"]}>{t('accessories')}</span>
                     <ul>
                         <li className={styles["accessories__item"]}>
-                            <img loading='lazy' src="/src/assets/images/img/accessories/binh-ve-hoa-sen-1579078281135761213270.webp" />
+                            <img loading='lazy' src="/img/accessories/binh-ve-hoa-sen-1579078281135761213270.webp" />
                         </li>
                         <li className={styles["accessories__item"]}>
-                            <img loading='lazy' src="/src/assets/images/img/accessories/img_60f8e56b8eebc.jpg" />
+                            <img loading='lazy' src="/img/accessories/img_60f8e56b8eebc.jpg" />
                         </li>
                         <li className={styles["accessories__item"]}>
-                            <img loading='lazy' src="/src/assets/images/img/accessories/boxgift.webp" />
+                            <img loading='lazy' src="/img/accessories/boxgift.webp" />
                         </li>
                     </ul>
                 </div>
