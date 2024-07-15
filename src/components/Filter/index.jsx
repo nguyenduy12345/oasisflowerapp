@@ -80,6 +80,9 @@ const Filter = ({types, setFilter, setProducts, setIsFilPrice, listData, setPage
         if(inputMax.current?.value && inputMin.current.value == '' ){
           return (((i18n.language == 'en' ? item.priceEN: +item.priceVI) <=  (+inputMax.current.value))) ;
         }
+        if(inputMax.current?.value == '' && inputMin.current.value == '' ){
+          return true;
+        }
       })
       setFilter(`change_price: min${inputMin.current?.value} & max${inputMax.current?.value}`)
       changePrice.length == 0 ? setIsFilPrice(true) : setProducts(changePrice)
