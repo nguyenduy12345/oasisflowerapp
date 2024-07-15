@@ -86,11 +86,10 @@ const Flowers = () => {
           >
             {(isFilPrice && <h4>{i18n.language == 'vi'? "Không tìm thấy sản phẩm tương ứng" : "can't find product. Please enter again"}</h4>) ||
               listProduct.map((item) => (
-              <Suspense fallback={<p>Loading...</p>}>
+              <Suspense key={item.id} fallback={<p>Loading...</p>}>
                 <Product
                   styleList={viewContext.styleList}
                   setDataItem={setDataItem}
-                  key={item.id}
                   item={item}
                 />
               </Suspense>

@@ -69,8 +69,8 @@ const Cakes = () => {
           >
           {isFilPrice && <h4>can't find product. Please enter again</h4> || 
           listProduct.map((item) => (
-            <Suspense fallback={<p>Loading...</p>}>
-             <Product styleList={viewContext.styleList} setDataItem={setDataItem} key={item.id} item={item} />
+            <Suspense key={item.id} fallback={<p>Loading...</p>}>
+             <Product styleList={viewContext.styleList} setDataItem={setDataItem} item={item} />
             </Suspense>
             ))}
             {isFilPrice || 
