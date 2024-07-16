@@ -6,13 +6,16 @@
 }
 .contact{
     position: fixed;
-    right: 5px;
+    right: 15px;
     bottom: 60px;
-    height: auto;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__icon{
         @include flex-center();
-        height: 2.7rem;
-        width: 2.5rem;
+        // height: 2.7rem;
+        // width: 2.5rem;
         i{
             font-size: 1.6rem;
             cursor: pointer;
@@ -33,6 +36,17 @@
         }
         100%{
             scale: 1;
+        }
+    }
+}
+@media (max-width:768px){
+    .contact{
+        height: 135px;
+        right: 35px !important;
+        &__icon{
+            i{
+                font-size: 1.3rem;
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ header{
     @include flex-center();
 }
 .header{
-    &__cate--mode{
+    &__category--mode{
         display: flex;
         width: 100%;
         max-width: 100vw;
@@ -218,6 +218,23 @@ ul.header__navbar_list{
     }
 }
 
+@media (max-width: 468px){
+    .header__firstline{
+        .logo a{
+            font-size: 1.1rem !important;
+        }
+    }
+}
+@media (max-width: 568px){
+    .header{
+        &__navbar{
+            margin-top: 0;
+        }
+        &__category--mode{
+            display: none;
+        }
+    }
+}
 @media (max-width: 992px) {
     .header{
         max-width: 100vw;
@@ -252,7 +269,7 @@ ul.header__navbar_list{
             padding-left: 15px;
             padding-bottom: 10px;
             margin-bottom: 0;
-            background-color: $background-color;
+            background-color: var(--main-background);
             i.icon__close{
                 position: absolute;
                 right: 40px;
@@ -263,13 +280,17 @@ ul.header__navbar_list{
                 font-weight: bold;
                 text-transform: uppercase;
                 font-size: $font-size-des;
-                color: $color-text;
+                color: var(--main-text);
                 &:hover{
                     background-color: $background-color2;
                 }
             }
             a:hover{
                 border-bottom: $border1;
+            }
+            ul{
+                display: flex;
+                padding-left: 0;
             }
         }
     }

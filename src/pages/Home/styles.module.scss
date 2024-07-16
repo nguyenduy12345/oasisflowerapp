@@ -9,7 +9,7 @@
     padding-bottom: 20px;
     .delivery{
         width: $width-container;
-        max-width: 98vw;
+        max-width: 100vw;
         text-align: center;
         padding: 20px 0;
         margin: auto;
@@ -167,8 +167,8 @@
             font-size: 0.8rem;
         }
         &__item{
-            width: 49.7%;
             padding: 0;
+            margin-bottom: 10px;   
             background-color: var(--main-background);
             color: var(--main-text);
             border: 1px solid var(--main-text);
@@ -180,4 +180,43 @@
             padding-top: 10px;
         }
     }
+}
+@media (max-width: 568px){
+    .home{
+        .delivery{
+            display: none;
+        }
+    }
+    .about{
+
+        h3{
+            padding: 0 10px !important;
+        }
+        &__description{
+            padding: 0 20px;
+        }
+        &__item{
+            padding: 0;
+            margin-bottom: 10px;   
+            background-color: var(--main-background);
+            color: var(--main-text);
+            border: 1px solid var(--main-text);
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 768px){
+    .events{
+        &__item{
+            border: none !important;
+        }
+    }
+    .about{
+        &__item{
+            border: none !important;
+        }
+    }
+
 }

@@ -48,3 +48,11 @@
         transform: translateX(24px);
     }
 }
+@media (max-width: 568px){
+    .mode {
+        &__icon{
+            height: 100%;
+            @include flex-center();
+        }
+    }
+}

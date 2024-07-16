@@ -74,7 +74,7 @@ const Header = () => {
           <Searching products={products} setIsSearching={setIsSearching} />
         )}
         <div className={styles["header__navbar"]}>
-          <div className={styles["header__cate--mode"]}>
+          <div className={styles["header__category--mode"]}>
             <Language />
             <DarkMode />
             <Weather />
@@ -178,6 +178,10 @@ const Header = () => {
               >
                 <li className={styles["nav__item"]}>{t('nav.nav-5')}</li>
               </NavLink>
+              <ul><li><Language /></li>
+              <li><DarkMode /></li>
+              <li><Weather /></li></ul>
+              
               <li className={styles["nav__item"]}>User</li>
               <li className={styles["nav__item"]}>Searching</li>
             </ul>
