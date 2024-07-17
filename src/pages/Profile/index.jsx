@@ -182,11 +182,11 @@ const Profile = () => {
                       className="fa-solid fa-eye"
                     ></i>
                   )}
-                </li>
-                <p className={styles["profile__message"]}>{message}</p>
+                </li>               
                 <button onClick={handleUpdatePassword}>
                   Save <i className="fa-solid fa-check"></i>
                 </button>
+                <p className={styles["profile__message"]}>{message}</p>
               </ul>
             )}
           </ul>
