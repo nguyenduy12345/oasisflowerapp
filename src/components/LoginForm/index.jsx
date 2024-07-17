@@ -44,11 +44,11 @@ const LoginForm = ({ setIsLogin}) => {
     event.preventDefault();
   }, [])
   const getAccountRegister = localStorage.getItem("USER_REGISTER") ? JSON.parse(localStorage.getItem("USER_REGISTER")) : []
+  let timeout = null
   const handleSubmitForm = useCallback(() =>{
     let userLogin = getAccountRegister.find((item) => (item.username == account.username && +item.password == account.password))
     let limitSubmitLogin = localStorage.getItem("LIMIT_LOGIN") ? JSON.parse(localStorage.getItem("LIMIT_LOGIN")) : 1
-    if(userLogin){
-      if(limitSubmitLogin < 6 ){
+    if(userLogin && limitSubmitLogin < 6 ){
         setStateLogin(true)
         setMessageNotifi(i18n.language == 'vi' ? 'Đăng nhập thành công' : 'Logged in successfully')
         setTimeout(() =>{setMessageNotifi(undefined)},1000)
@@ -56,20 +56,20 @@ const LoginForm = ({ setIsLogin}) => {
         localStorage.removeItem("LIMIT_LOGIN")
         localStorage.setItem('USER_LOGIN', JSON.stringify(userLogin))
         setTimeout(() => setIsLogin(false), 500)
-      }
     }else{
-      if(limitSubmitLogin < 6){
+      if(limitSubmitLogin < 5){
           localStorage.setItem('LIMIT_LOGIN', JSON.stringify((+limitSubmitLogin + 1))) 
           setMessageLogin(i18n.language == 'vi'? `Vui lòng nhập lại tài khoản và mật khẩu của bạn! Số lần nhập còn lại: ${limitSubmitLogin}/5` : `Please enter again username or password! Number of entries: ${limitSubmitLogin}/5`)
-          setTimeout(() => {
-            setMessageLogin('')
-          }, 10000)
+          // setTimeout(() => {
+          //   setMessageLogin('')
+          // }, 10000)
       }else{
         setMessageLogin(i18n.language == 'vi'? 'Bạn đã nhập sai 5 lần liên tiếp, vui lòng chờ 30 phút để đăng nhập lại!' :'You have entered the wrong account or password 5 times in a row, please wait for 30 minutes')
-        setTimeout(() => {
-          localStorage.removeItem("LIMIT_LOGIN")
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+        localStorage.removeItem("LIMIT_LOGIN")
           setMessageLogin('')
-        }, 10000)
+        }, 5000)
       }
     }
   }, [account])
