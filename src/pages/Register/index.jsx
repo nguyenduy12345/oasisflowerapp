@@ -2,7 +2,7 @@ import { useRef, useEffect, useState, memo, useContext } from "react";
 import { useForm} from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { MessageContext } from "/src/stores"
+import { MessageContext, StateLogin } from "/src/stores"
 import styles from "./styles.module.scss";
 import img from "./imgregister.webp";
 
@@ -14,6 +14,7 @@ const Register = () => {
   const inputName= useRef(null);
   const [isState, setIsState] = useState('')
   const { setMessageNotifi } = useContext(MessageContext)
+  const { setStateLogin } = useContext(StateLogin)
   useEffect(() => {
     inputName.current.focus();
   }, []);
@@ -26,6 +27,9 @@ const Register = () => {
         setIsState(i18n.language == 'vi' ? "Bạn đã đăng ký thành công tài khoản!" : "Congulations! Register succes.")
         setTimeout(() => setIsState(''), 2000)
         setMessageNotifi(i18n.language == 'vi' ? 'Bạn đã đăng ký thành công tài khoản' : "Congulations! Register succes.")
+        setStateLogin(true)
+        localStorage.setItem("USER_LOGIN", JSON.stringify(data))
+        window.location="http://localhost:5173/home";
         clearTimeout(timeout)
         let timeout = setTimeout(() => setMessageNotifi(undefined), 1000 );
     }
