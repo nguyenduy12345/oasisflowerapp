@@ -29,7 +29,7 @@ const Register = () => {
         setMessageNotifi(i18n.language == 'vi' ? 'Bạn đã đăng ký thành công tài khoản' : "Congulations! Register succes.")
         setStateLogin(true)
         localStorage.setItem("USER_LOGIN", JSON.stringify(data))
-        window.location="http://localhost:5173/home";
+        window.location="https://oasisflowers.vercel.app";
         clearTimeout(timeout)
         let timeout = setTimeout(() => setMessageNotifi(undefined), 1000 );
     }
